@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  AIGC 工具导航 · AI TOOLS DIRECTORY
+  ----------------------------------------------------------------
+  创作者 / 维护者：潘信豪
+  © 2026 潘信豪. 保留所有权利（All Rights Reserved）
+
+  本站的工具条目整理、分类体系、页面设计与前端代码均为原创成果，
+  首次上线：2026-10-09　最近更新：2026-10-09　版本：v1.0.0
+
+  未经许可，禁止整站镜像、批量抓取与二次发布。
+  联系方式见页面底部「联系作者」区块，或访问 about.html
+  ================================================================
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AIGC 工具导航 · 发现真正好用的 AI 工具</title>
+<meta name="description" content="收录 100+ 款主流 AIGC 工具，覆盖对话写作、图像生成、视频生成、音频音乐、编程开发、办公效率、设计创意与搜索研究。支持登录收藏、评论与工具投稿。">
+
+<!-- 作者与版权声明 -->
+<meta name="author" content="潘信豪">
+<meta name="copyright" content="© 2026 潘信豪. All Rights Reserved.">
+<meta name="owner" content="潘信豪">
+<meta name="revised" content="2026-10-09">
+<meta name="generator" content="AIGC 工具导航 v1.0.0">
+<link rel="canonical" href="https://bielaozai114514.github.io/aigc-tools-nav/">
+<link rel="author" href="https://bielaozai114514.github.io/aigc-tools-nav/about.html">
+<link rel="copyright" href="https://bielaozai114514.github.io/aigc-tools-nav/about.html#copyright">
+
+<!-- 分享卡片 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AIGC 工具导航">
+<meta property="og:title" content="AIGC 工具导航 · 发现真正好用的 AI 工具">
+<meta property="og:description" content="收录 100+ 款主流 AIGC 工具，由创作者独立整理与维护。">
+<meta property="article:author" content="潘信豪">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 结构化数据：声明站点作者、创建者与版权归属 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AIGC 工具导航",
+  "alternateName": "AI TOOLS DIRECTORY",
+  "description": "一个由创作者独立整理、分类与持续维护的 AIGC 工具目录，收录 100+ 款主流 AI 工具。",
+  "inLanguage": "zh-CN",
+  "author":    { "@type": "Person", "name": "潘信豪", "jobTitle": "自媒体创作者" },
+  "creator":   { "@type": "Person", "name": "潘信豪" },
+  "publisher": { "@type": "Person", "name": "潘信豪" },
+  "copyrightYear": 2026,
+  "copyrightHolder": { "@type": "Person", "name": "潘信豪" },
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "version": "1.0.0"
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ 顶栏 ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="./">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2.5 14.6 8l5.9.9-4.3 4.2 1 6-5.2-2.8L6.8 19l1-6L3.5 8.9 9.4 8 12 2.5Z"
+                fill="currentColor" opacity=".92"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIGC 工具导航</b>
+        <i>AI TOOLS DIRECTORY</i>
+      </span>
+    </a>
+
+    <div class="header-search">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input id="headerSearch" type="search" placeholder="搜索工具、功能或标签…" autocomplete="off">
+    </div>
+
+    <nav class="header-actions">
+      <button class="btn ghost" id="btnFavList" type="button">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 20s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7 3.1C19 15.6 12 20 12 20Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span class="lbl">我的收藏</span>
+      </button>
+      <button class="btn ghost" id="btnSubmitTool" type="button">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+        <span class="lbl">投稿</span>
+      </button>
+      <button class="btn primary" id="btnLogin" type="button">
+        <span class="lbl-wide">登录 / 注册</span><span class="lbl-narrow">登录</span>
+      </button>
+
+      <div class="user-box" id="userBox" hidden>
+        <button class="user-trigger" id="userTrigger" type="button">
+          <span class="avatar" id="userAvatar">U</span>
+          <span class="user-name" id="userName">用户</span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="user-menu" id="userMenu" hidden>
+          <div class="user-menu-head">
+            <div class="um-email" id="userEmail">—</div>
+            <div class="um-meta" id="userMeta">—</div>
+          </div>
+          <button class="um-item" id="menuFav" type="button">我的收藏</button>
+          <button class="um-item" id="menuMySubmit" type="button">我的投稿</button>
+          <button class="um-item danger" id="menuLogout" type="button">退出登录</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      已收录 <b id="statTools">0</b> 款工具 · <b id="statCats">0</b> 个分类<span id="favStatWrap" hidden> · <b id="statFavs">0</b> 次收藏</span>
+    </div>
+    <h1>发现真正好用的 <span class="grad">AIGC 工具</span></h1>
+    <p class="hero-sub">写作、绘图、视频、音频、编程、办公、设计、研究 —— 一个页面逛完主流 AI 工具。</p>
+
+    <div class="hero-search">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input id="heroSearch" type="search" placeholder="试试搜「视频生成」「抠图」「PPT」「论文」…" autocomplete="off">
+      <button class="btn primary" id="heroSearchBtn" type="button">搜索</button>
+    </div>
+
+    <div class="quick-row" id="quickRow">
+      <span class="quick-label">热门搜索</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 主体 ============ -->
+<main class="wrap main">
+  <div class="toolbar">
+    <div class="cat-bar" id="catBar" role="tablist"></div>
+    <div class="filter-bar">
+      <label class="select-wrap">
+        <span>收费</span>
+        <select id="priceFilter">
+          <option value="all">全部</option>
+          <option value="free">免费</option>
+          <option value="freemium">免费增值</option>
+          <option value="paid">付费</option>
+          <option value="open">开源</option>
+        </select>
+      </label>
+      <label class="select-wrap">
+        <span>排序</span>
+        <select id="sortBy">
+          <option value="featured">推荐优先</option>
+          <option value="fav">收藏最多</option>
+          <option value="name">名称排序</option>
+        </select>
+      </label>
+      <button class="btn ghost small" id="btnReset" type="button">重置</button>
+    </div>
+  </div>
+
+  <div class="result-info" id="resultInfo"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty" hidden>
+    <div class="empty-ico">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/>
+        <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h3>没有找到匹配的工具</h3>
+    <p id="emptyHint">换个关键词，或者重置筛选条件试试。</p>
+    <button class="btn primary" id="btnEmptyReset" type="button">重置筛选</button>
+  </div>
+
+  <div class="load-more-wrap">
+    <button class="btn ghost" id="btnLoadMore" type="button" hidden>加载更多</button>
+  </div>
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-col footer-about">
+        <a class="brand" href="./">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2.5 14.6 8l5.9.9-4.3 4.2 1 6-5.2-2.8L6.8 19l1-6L3.5 8.9 9.4 8 12 2.5Z" fill="currentColor" opacity=".92"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b id="aboutBrand">AIGC 工具导航</b></span>
+        </a>
+        <p class="foot-tagline" id="footTagline">—</p>
+        <p class="foot-credit">
+          © <span id="footYear">2026</span> <b id="footCreator">—</b> · <span id="footLicense">—</span><br>
+          <span class="credit-sub">本站由 <b id="footCreator2">—</b> 独立整理、设计与维护</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>关于本站</h4>
+        <ul class="foot-links">
+          <li><a href="about.html">关于本站与作者</a></li>
+          <li><a href="about.html#copyright">版权声明</a></li>
+          <li><a href="about.html#license">内容授权</a></li>
+          <li><a href="about.html#disclaimer">免责声明</a></li>
+          <li><a href="about.html#changelog">更新日志</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>联系作者</h4>
+        <ul class="contact-list" id="footContacts"></ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span id="footStat">—</span>
+      <span class="sep">·</span>
+      <span>版本 <b id="footVersion">—</b></span>
+      <span class="sep">·</span>
+      <span>上线 <b id="footLaunch">—</b></span>
+      <span class="sep">·</span>
+      <span>最后更新 <b id="footUpdated">—</b></span>
+      <span class="sep">·</span>
+      <span>收录不等于推荐，请自行评估使用</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 弹层容器 ============ -->
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- 后端 SDK（Supabase）。配置未填时 cloud.js 会自动休眠，不影响页面 -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/site-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/site-chrome.js"></script>
+</body>
+</html>

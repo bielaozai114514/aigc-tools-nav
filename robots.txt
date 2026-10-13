@@ -1,0 +1,11 @@
+# AIGC 工具导航 · robots.txt
+# 创作者 / 维护者：潘信豪
+# © 2026 潘信豪. 保留所有权利.
+# 首次上线：2026-10-09　最近更新：2026-10-10
+
+User-agent: *
+Allow: /
+Disallow: /*.sql$
+
+# 允许搜索引擎收录，但请勿整站镜像或批量抓取后重新发布。
+Sitemap: https://bielaozai114514.github.io/aigc-tools-nav/sitemap.xml
