@@ -171,6 +171,9 @@ window.AIGC_TOOLS = [
   { id:'trae', name:'Trae', url:'https://www.trae.ai', cat:'code', price:'free',
     desc:'字节 AI IDE，中文语境友好，个人免费可用。', tags:['AI编辑器','中文','免费'] },
 
+  { id:'agent-qa', name:'agent-qa', url:'https://vostride.com', cat:'code', price:'free',
+    desc:'Web、Android 和 iOS 自然语言测试，持久记忆引擎与经验证的自我改进。本地包免费，模型费用另计。', tags:['自动化测试','持久记忆','MCP'] },
+
   /* ========== 办公与效率 ========== */
   { id:'copilot365', name:'Microsoft Copilot', url:'https://copilot.microsoft.com', cat:'office', price:'freemium', featured:true,
     desc:'微软全家桶 AI，Word / Excel / PPT 一体协作。', tags:['办公套件','微软','文档'] },
